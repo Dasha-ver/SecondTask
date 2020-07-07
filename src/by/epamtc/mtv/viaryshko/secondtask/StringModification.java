@@ -10,7 +10,7 @@ public class StringModification {
     public StringModification(String stringForModification) {
 
         this.stringForModification = stringForModification;
-        stringWithoutSpaces = getStringWithoutSpaces();
+        stringWithoutSpaces = receiveStringWithoutSpaces();
 
     }
 
@@ -33,7 +33,7 @@ public class StringModification {
     }
 
     //Процентное соотношение строчных и прописных букв
-    public void getPercentForUpperLowerCase() {
+    public void receivePercentForUpperLowerCase() {
 
         int counterForLower = 0;
         int counterForUpper = 0;
@@ -50,7 +50,7 @@ public class StringModification {
     }
 
     //Удаление одинаковых символов
-    public String getWithoutDuplicateCharacters() {
+    public String receiveWithoutDuplicateCharacters() {
 
         StringBuilder stringWithoutDuplicate = new StringBuilder();
         int index;
@@ -65,7 +65,7 @@ public class StringModification {
     }
 
     //Частота встречаемости символа в строке
-    public int getCountSymbol(char symbolForFind) {
+    public int receiveCountSymbol(char symbolForFind) {
 
         int counter = 0;
         for (int i = 0; i < stringForModification.length(); i++) {
@@ -77,7 +77,7 @@ public class StringModification {
     }
 
     //Переворот строки
-    public String getReverseString() {
+    public String receiveReverseString() {
 
         StringBuilder reversedString = new StringBuilder(stringForModification);
         return reversedString.reverse().toString();
@@ -85,7 +85,7 @@ public class StringModification {
     }
 
     //Вставка подстроки
-    public String getWithSubstring(int position, String substring) {
+    public String receiveWithSubstring(int position, String substring) {
 
         if (position < 0 || position > stringForModification.length()) {
             return "Проверьте ввод данных!";
@@ -97,7 +97,7 @@ public class StringModification {
     }
 
     //Удаление подстроки
-    public String getWithoutSubstring(int start, int finish) {
+    public String receiveWithoutSubstring(int start, int finish) {
 
         if (start < 0 || start > stringForModification.length() || finish < 0 || finish > stringForModification.length()) {
 
@@ -110,7 +110,7 @@ public class StringModification {
     }
 
     //Копирование части строки
-    public String getCopiedString(int start, int finish) {
+    public String receiveCopiedString(int start, int finish) {
         if (start < 0 || start > stringForModification.length() || finish < 0 || finish > stringForModification.length()) {
 
             return "Проверьте ввод данных!";
@@ -121,20 +121,20 @@ public class StringModification {
     }
 
     //Определение длины строки
-    public int getLength() {
+    public int receiveLength() {
 
         return stringForModification.length();
     }
 
     //Количество вхождений подстроки в строку
-    public int getAmountOFSubstring(String substring) {
+    public int receiveAmountOFSubstring(String substring) {
         String[] splitArray = stringForModification.split(substring);
         return splitArray.length - 1;
     }
 
 
     //Вывести слова строки в обратном порядке
-    public String getWordsInReversOrder() {
+    public String receiveWordsInReversOrder() {
 
         StringBuilder wordsForReversOrder = new StringBuilder();
         String[] words = stringForModification.split(" ");
@@ -146,7 +146,7 @@ public class StringModification {
     }
 
     //Заменить пробел и группы пробелов символом "*"
-    public String getWithChangeSpacesOnStar() {
+    public String receiveWithChangeSpacesOnStar() {
         return stringForModification.replaceAll("\\s+", "*");
 
     }
@@ -171,7 +171,7 @@ public class StringModification {
     }
 
     //Определить длину самого короткого слова в строке
-    public int getMinWordLength() {
+    public int receiveMinWordLength() {
 
         String[] words = stringForModification.split("\\s+");
         int minLength = words[0].length();
@@ -184,13 +184,13 @@ public class StringModification {
     }
 
     //Подсчет количества слов в строке
-    public int getCountQuantityOfWords() {
+    public int receiveCountQuantityOfWords() {
         String[] words = stringForModification.split("\\s+");
         return words.length;
     }
 
     //Поменять слова местами
-    public String getWithSwap(int replaceableIndex, int replacementIndex) {
+    public String receiveWithSwap(int replaceableIndex, int replacementIndex) {
 
         String[] words = stringForModification.split("\\s+");
         if (words.length == 1) {
@@ -211,7 +211,7 @@ public class StringModification {
     }
 
     //Удаление последнего слова в строке
-    public String getWithoutLastWord() {
+    public String receiveWithoutLastWord() {
 
         StringBuilder stringWithoutLastWord = new StringBuilder();
         String[] words = stringForModification.split("\\s+");
@@ -222,7 +222,7 @@ public class StringModification {
     }
 
     // Добавление пробелов в строку
-    public String getWithAddedSpace(int position) {
+    public String receiveWithAddedSpace(int position) {
         String space = " ";
         if (position < 0 || position > stringForModification.length()) {
 
@@ -235,7 +235,7 @@ public class StringModification {
     }
 
     //Является ли строка палиндром?
-    public boolean getResultForPalindrom() {
+    public boolean receiveResultForPalindrom() {
 
         int counter = 0;
         char[] arrayForString = stringForModification.toCharArray();
@@ -248,12 +248,12 @@ public class StringModification {
     }
 
     //замена  подстроки в строке
-    public String getReplacedSubstringInString(String regex, String substring) {
+    public String receiveReplacedSubstringInString(String regex, String substring) {
         return stringForModification.replaceAll(regex, substring);
     }
 
     //Сложение очень длинных целых чисел
-    public BigInteger getAdditionedBigNumber(String firstNumber, String secondNumber) {
+    public BigInteger receiveAdditionedBigNumber(String firstNumber, String secondNumber) {
         BigInteger firstValue = new BigInteger(firstNumber);
         BigInteger secondValue = new BigInteger(secondNumber);
         return firstValue.add(secondValue);
@@ -261,7 +261,7 @@ public class StringModification {
     }
 
     //Удаление из строки слов заданной длины
-    public String getWithoutDeleteWordsForLength(int length) {
+    public String receiveWithoutDeleteWordsForLength(int length) {
 
         StringBuilder stringWithoutDeleted = new StringBuilder();
         String[] words = stringForModification.split("\\s+");
@@ -274,13 +274,13 @@ public class StringModification {
     }
 
     //Удаление лишних пробелов
-    public String getWithoutExcessSpaces() {
+    public String receiveWithoutExcessSpaces() {
         return stringForModification.replaceAll("\\s+", " ");
     }
 
     //Выделение слов из строки
-    public void wordSelection(String delimiter) {
-        getWithoutExcessSpaces();
+    public void receiveSelection(String delimiter) {
+        receiveWithoutExcessSpaces();
         String[] words = stringForModification.split(delimiter);
         for (String word : words) {
             System.out.println(word);
@@ -288,7 +288,7 @@ public class StringModification {
     }
 
     //получение строки без пробелов
-    public String getStringWithoutSpaces() {
+    public String receiveStringWithoutSpaces() {
         return stringForModification.replaceAll(" ", "");
     }
 }
